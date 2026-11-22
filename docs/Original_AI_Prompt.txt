@@ -1,0 +1,99 @@
+I am working on an Analysis of Algorithms semester project titled **"Hidden Object Game Using Linear Search Algorithm"**.
+
+I want you to generate a complete and well-structured C++ implementation and its corresponding step-by-step algorithm.
+
+**1. Project Requirements**
+
+Develop a console-based Hidden Object Game with the following specifications:
+
+- The game contains 10 objects inside a room:
+  book, clock, key, phone, bag, pencil, cup, watch, ball, and camera.
+- The player must find 5 specific hidden objects:
+  key, phone, clock, camera, and watch.
+- The player has a maximum of 10 attempts.
+- The game has only ONE level.
+- The program must use arrays to store the objects.
+- The program must use Linear Search Algorithm to search for objects.
+- The search must be case-insensitive (uppercase and lowercase letters should be treated equally).
+- Use a Boolean array to track which required objects have already been found.
+- The score increases by 1 whenever the player finds a new required object.
+- The program must prevent counting the same object more than once.
+- Display the remaining objects that the player still needs to find.
+- Display the current score and remaining attempts after every guess.
+- Display a winning message if all 5 objects are found.
+- Display a losing message if the player uses all 10 attempts without finding all required objects.
+
+**2. C++ Code Requirements**
+
+Write the complete C++ source code using:
+
+- #include <iostream>
+- #include <string>
+- #include <algorithm>
+- #include <cctype>
+
+Use the following functions:
+
+1. toLowerCase() – Converts text to lowercase for case-insensitive comparison.
+2. linearSearch() – Searches an array element by element and returns its index if found, otherwise returns -1.
+3. displayRemaining() – Displays all required objects that have not yet been found.
+4. main() – Controls the game, handles player input, updates the score, and displays the final result.
+
+Use clean formatting, meaningful comments, and beginner-friendly C++ code.
+
+**3. Algorithm Requirements**
+
+After writing the code, provide its corresponding algorithm using the following exact academic format and structure:
+
+Algorithm SUM (No1, No2, Res)
+
+{ This algorithm is used to read two numbers and print their sum }
+
+Step-1 [Read numbers No1 and No2]
+Read(No1, No2)
+
+Step-2 [Calculate the sum]
+Res = No1 + No2
+
+Step-3 [Display the Result]
+Write(Res)
+
+Step-4 {Finish}
+Exit
+
+Now create the algorithm for the Hidden Object Game using the same format:
+
+- Give the algorithm a suitable name.
+- Start with a short description explaining its purpose.
+- Divide the algorithm into clearly numbered steps.
+- Use simple and understandable English.
+- Use commands such as Read(), Write(), IF, ELSE, WHILE, and EXIT where appropriate.
+- Explain how Linear Search is performed step by step.
+- Include initialization of arrays, score, attempts, and found objects.
+- Include checking whether an object exists in the room.
+- Include checking whether the object is on the required list.
+- Include duplicate object handling.
+- Include updating the score and remaining attempts.
+- Include the game termination condition.
+- Include the final winning or losing result.
+
+**4. Important Instructions**
+
+- The C++ code and the algorithm MUST describe exactly the same game logic.
+- Do not introduce features that are not mentioned in the requirements.
+- Do not use Binary Search, Sorting, or other searching algorithms.
+- Linear Search must be the main searching algorithm.
+- Ensure that the algorithm is logically correct and matches the actual implementation.
+- Keep the explanation suitable for a BS Software Engineering student studying Analysis of Algorithms.
+
+**5. Final Output Structure**
+
+Present the answer in this order:
+
+1. Project Title
+2. Complete C++ Source Code
+3. Algorithm in the same Step-1, Step-2, Step-3 academic format
+4. Short explanation of how Linear Search works in this project
+5. Time Complexity and Space Complexity
+
+Make the final answer professional, accurate, organized, and ready to be used in an academic semester project report.

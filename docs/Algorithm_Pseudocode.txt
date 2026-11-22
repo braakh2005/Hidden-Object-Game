@@ -1,0 +1,81 @@
+Algorithm HIDDEN_OBJECT_GAME (Objects, Required, Found, Score, Attempts)
+
+{ This algorithm allows a player to find five required objects in a room using Linear Search.
+  The player has one level and a maximum of ten attempts. }
+
+Step-1 [Initialize the game]
+    Set SIZE = 10 and TARGETS = 5.
+    Objects = [book, clock, key, phone, bag, pencil, cup, watch, ball, camera].
+    Required = [key, phone, clock, camera, watch].
+    Set Found[0..TARGETS-1] = False.
+    Set Score = 0.
+    Set Attempts = 10.
+
+Step-2 [Display the game instructions]
+    Write("HIDDEN OBJECT GAME").
+    Write("You have only ONE LEVEL").
+    Write(Required).
+    Write("You have 10 attempts").
+
+Step-3 [Repeat while the game is not finished]
+    WHILE (Score < TARGETS AND Attempts > 0) DO
+        Write all Required[i] for which Found[i] = False.
+        Read(Guess).
+        Attempts = Attempts - 1.
+
+Step-4 [Search for the guessed object in the room]
+    Set Index = -1.
+    Convert Guess to lowercase.
+    FOR i = 0 TO SIZE - 1 DO
+        Convert Objects[i] to lowercase.
+        IF Objects[i] = Guess THEN
+            Index = i.
+            BREAK.
+        END IF
+    END FOR
+
+    IF Index = -1 THEN
+        Write("Object does not exist in the room").
+    ELSE
+        Go to Step-5.
+    END IF
+
+Step-5 [Check whether the object is required]
+    Set TargetIndex = -1.
+    FOR j = 0 TO TARGETS - 1 DO
+        Convert Required[j] to lowercase.
+        IF Required[j] = Guess THEN
+            TargetIndex = j.
+            BREAK.
+        END IF
+    END FOR
+
+    IF TargetIndex = -1 THEN
+        Write("This object is not on your target list").
+    ELSE IF Found[TargetIndex] = True THEN
+        Write("You already found this object").
+    ELSE
+        Found[TargetIndex] = True.
+        Score = Score + 1.
+        Write("Correct! You found the object").
+        Write(Required[TargetIndex]).
+    END IF
+
+Step-6 [Display the current game status]
+    Write("Score: ", Score, "/", TARGETS).
+    Write("Remaining Attempts: ", Attempts).
+    Return to Step-3 while (Score < TARGETS AND Attempts > 0).
+
+Step-7 [Display the final result]
+    Write("GAME OVER").
+    IF Score = TARGETS THEN
+        Write("Congratulations! You won!").
+        Write("You found all hidden objects!").
+    ELSE
+        Write("You lost! Try again.").
+    END IF
+    Write("Final Score: ", Score, "/", TARGETS).
+    Write("Total Attempts Used: ", 10 - Attempts).
+
+Step-8 [Finish]
+    EXIT.
